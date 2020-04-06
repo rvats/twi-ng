@@ -35,10 +35,5 @@ export class AppComponent implements OnInit {
     const personPromise: Promise<Person> = Promise.resolve(person);
     const personPromiseObs: Observable<Person> = from(personPromise);
     personObs.subscribe(data=>console.log(data));
-
-    // This is misc code to learn more about RXJS operator timer
-    const source = timer(1000, 1000);
-    const subscribe = source.subscribe(val => console.log(val));
-    setTimeout(() => { subscribe.unsubscribe(); }, 10000);
   }
 }
